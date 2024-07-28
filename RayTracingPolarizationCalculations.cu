@@ -5,7 +5,7 @@
 //PColor:P-polarized light carried by rays
 //SColor:S-polarized light carried by rays
 
-RpRs CalculatePolarization(float3& Ray, float3& OBJ_N, float3& Ray_N, float3& PColor, float3& SColor)
+static __forceinline__ __device__ RpRs CalculatePolarization(float3& Ray, float3& OBJ_N, float3& Ray_N, float3& PColor, float3& SColor)
 {
     float3 TangentA = Normalize(cross(OBJ_N, OBJ_N + float3{ 1.2349f,2.123f,-3.4857f }));
     float3 TangentB = Normalize(cross(TangentA, OBJ_N));
